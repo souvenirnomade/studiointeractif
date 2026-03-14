@@ -6847,11 +6847,14 @@ document.addEventListener('keydown',e=>{
   }
 });
 
-/* Fermer l'écran lock via overlay */
+/* Fermer l'écran lock via overlay (corrigé) */
 document.getElementById('screen-lock').addEventListener('click',e=>{
-  /* Ne fermer QUE si on a une licence trial valide (pas expired) */
-  const lic = loadLicense();
-  if(lic && (lic.status==='trial' || lic.status==='pro' || lic.status==='particulier')){
+  // Si on clique à l'intérieur de la carte blanche/noire (lock-card), on ne fait rien
+  if(e.target.closest('.lock-card')) return;
+
+  /* Ne fermer QUE si on a une licence trial valide */
+  const lic = getStoredLicense();
+  if(lic && lic.status === 'trial' && !isExpired(lic.expiry)){
     closeLockScreen();
   }
 });
