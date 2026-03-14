@@ -778,44 +778,54 @@ body.has-trial-banner .nav-bar{top:36px;}
 
   <div class="lock-card">
     <div class="lock-icon">🔐</div>
-    <div class="lock-titre" id="lock-titre">Période d'essai terminée</div>
+    <div class="lock-titre" id="lock-titre">Activez votre accès</div>
     <div class="lock-txt" id="lock-txt">
-      Votre période d'essai de 7 jours est arrivée à son terme.<br>
-      Entrez votre code d'activation pour continuer.
+      Choisissez une offre pour débloquer l'application.<br>
+      Votre code vous sera envoyé par email après paiement.
     </div>
-    <div class="lock-input-wrap">
+
+    <div class="lock-offers" style="display: flex; gap: 15px; margin-top: 20px;">
+      <div class="lock-offer" style="flex: 1; border: 1px solid #6eb5ff; background: rgba(110, 181, 255, 0.05); border-radius: 12px; padding: 15px; text-align: center; display: flex; flex-direction: column; justify-content: space-between;">
+        <div>
+          <div class="lock-offer-title" style="color:#6eb5ff; font-family:'Cinzel'; font-size: 10px; font-weight: bold; letter-spacing: 1px;">✦ Offre Expert PRO</div>
+          <div class="lock-offer-desc" style="font-size: 10px; opacity: 0.7; margin: 8px 0;">Catalogue Expert · Harcourt · Boudoir · Roues</div>
+        </div>
+        <div style="margin-top: 15px;">
+          <a href="https://buy.stripe.com/9B6dR23yc8ChgZR6GLgfu02" target="_blank" class="lock-btn" style="display: block; font-size: 11px; padding: 10px; text-decoration: none; margin-bottom: 5px;">ESSAI 7 JOURS</a>
+          <span style="font-size: 9px; opacity: 0.5;">puis 19€ / mois</span>
+          <a href="https://buy.stripe.com/4gMaEQgkYaKpcJB0ingfu03" target="_blank" style="display: block; font-size: 9px; color: #6eb5ff; margin-top: 8px; text-decoration: underline;">Ou 149€ / an</a>
+        </div>
+      </div>
+
+      <div class="lock-offer" style="flex: 1; border: 1px solid #f0a860; background: rgba(240, 168, 96, 0.05); border-radius: 12px; padding: 15px; text-align: center; display: flex; flex-direction: column; justify-content: space-between;">
+        <div>
+          <div class="lock-offer-title" style="color:#f0a860; font-family:'Cinzel'; font-size: 10px; font-weight: bold; letter-spacing: 1px;">✦ Pack Festif</div>
+          <div class="lock-offer-desc" style="font-size: 10px; opacity: 0.7; margin: 8px 0;">Toutes les Roues de poses · Solo · Duo · Groupes</div>
+        </div>
+        <div style="margin-top: 15px;">
+          <a href="https://buy.stripe.com/eVq6oA3yc2dT24X0ingfu00" target="_blank" class="lock-btn" style="display: block; font-size: 11px; padding: 10px; text-decoration: none; margin-bottom: 5px; background: linear-gradient(135deg, #f0a860, #d08840);">S'ABONNER</a>
+          <span style="font-size: 9px; opacity: 0.5;">9,90€ / mois</span>
+          <a href="https://buy.stripe.com/6oUbIUb0E8Ch6ldaX1gfu01" target="_blank" style="display: block; font-size: 9px; color: #f0a860; margin-top: 8px; text-decoration: underline;">Ou 79€ / an</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="lock-input-wrap" style="margin-top: 25px; border-top: 1px solid rgba(255,255,255,0.1); padding-top: 20px;">
+      <p style="font-size: 9px; color: var(--or); letter-spacing: 2px; margin-bottom: 10px;">DÉJÀ UN CODE ?</p>
       <input class="lock-input" id="lock-code-input"
-             placeholder="PRO-XXXX-XXXX ou EVE-XXXX-XXXX"
+             placeholder="PRO-XXXX-XXXX"
              maxlength="20"
              oninput="this.value=this.value.toUpperCase().replace(/[^A-Z0-9\-]/g,'')"
              onkeydown="if(event.key==='Enter')activateCode()">
+      <button class="lock-btn" onclick="activateCode()" style="background: none; border: 1px solid var(--or); color: var(--or); margin-top: 10px; width: 100%;">VALIDER MA CLÉ</button>
     </div>
-    <button class="lock-btn" onclick="activateCode()">Activer l'application</button>
     <div class="lock-msg" id="lock-msg"></div>
   </div>
 
   <div class="lock-footer">
-    <div class="lock-offers">
-      <div class="lock-offer">
-        <div class="lock-offer-title" style="color:#6eb5ff">✦ Offre Pro</div>
-        <div class="lock-offer-desc">Catalogue Expert · Roues · Harcourt · Boudoir</div>
-        <div class="lock-offer-billing">Mensuel · Trimestriel · Annuel</div>
-        <div class="lock-offer-code">Code <strong>PRO-XXXX-XXXX</strong></div>
-      </div>
-      <div class="lock-offer">
-        <div class="lock-offer-title" style="color:#f0a860">✦ Offre Particulier</div>
-        <div class="lock-offer-desc">Toutes les Roues Festives · Solo · Duo · Groupe</div>
-        <div class="lock-offer-billing">Mensuel · Trimestriel · Annuel</div>
-        <div class="lock-offer-code">Code <strong>EVE-XXXX-XXXX</strong></div>
-      </div>
-    </div>
-    Pour obtenir votre code :&nbsp;
-    <a class="lock-contact" href="https://souvenirnomade.wixsite.com/souvenirnomade" target="_blank">souvenirnomade.fr</a>
-    &nbsp;·&nbsp;
-    <a class="lock-contact" href="mailto:souvenir.nomade.photo@gmail.com">souvenir.nomade.photo@gmail.com</a>
+    <a class="lock-contact" href="mailto:souvenir.nomade.photo@gmail.com">Assistance & Support</a>
   </div>
 </div>
-
 <!-- Watermark MODE DÉMO sur la roue -->
 <div class="watermark-demo" id="wm-roue">MODE DÉMO</div>
 
