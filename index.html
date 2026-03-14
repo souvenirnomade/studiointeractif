@@ -746,6 +746,18 @@ body.has-trial-banner .nav-bar{top:36px;}
     padding-bottom:max(32px,env(safe-area-inset-bottom));
   }
 }
+
+.close-lock {
+  position: absolute;
+  top: env(safe-area-inset-top, 20px);
+  right: 20px;
+  font-size: 32px;
+  color: rgba(255,255,255,0.3);
+  cursor: pointer;
+  z-index: 10001;
+  transition: 0.2s;
+}
+.close-lock:hover { color: var(--or); transform: scale(1.1); }
 </style>
 </head>
 <body>
@@ -767,6 +779,8 @@ body.has-trial-banner .nav-bar{top:36px;}
 
 <!-- Écran de verrouillage -->
 <div id="screen-lock">
+  <div onclick="closeLockScreen()" style="position: absolute; top: 20px; right: 20px; font-size: 30px; color: rgba(255,255,255,0.3); cursor: pointer; z-index: 10001; width: 40px; height: 40px; display: flex; align-items: center; justify-content: center; transition: all 0.2s;" onmouseover="this.style.color='white'" onmouseout="this.style.color='rgba(255,255,255,0.3)'">×</div>
+
   <div class="lock-glow"></div>
   <div class="lock-logo">
     <img class="lock-portrait"
